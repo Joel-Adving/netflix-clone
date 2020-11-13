@@ -2,7 +2,6 @@
   margin: 0;
 }
 
-body {
-  background: black;
-  color: white;
+.app {
+  background-color: #111;
 }
