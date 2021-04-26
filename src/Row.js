@@ -11,12 +11,14 @@ function Row({ title, fetchUrl, isLargeRow }) {
   const [trailerUrl, setTrailerUrl] = useState('')
 
   useEffect(() => {
-    async function fetchData() {
-      const request = await axios.get(fetchUrl)
-      setMovies(request.data.results)
-      return request
-    }
-    fetchData()
+    setTimeout(function () {
+      async function fetchData() {
+        const request = await axios.get(fetchUrl)
+        setMovies(request.data.results)
+        return request
+      }
+      fetchData()
+    }, 1500)
   }, [fetchUrl])
 
   const opts = {
