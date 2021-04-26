@@ -1,6 +1,6 @@
 {
   "name": "netflix-clone",
-  "homepage": ".",
+  "homepage": "https://netflix-clone-six-zeta.vercel.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
