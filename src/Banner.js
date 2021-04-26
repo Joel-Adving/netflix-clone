@@ -4,21 +4,19 @@ import requests from './requests'
 import './Banner.css'
 
 function Banner() {
-  const [movie, setMovie] = useState([])
+  const [movie, setMovie] = useState(['a', 'b'])
 
   useEffect(() => {
-    setTimeout(function () {
-      async function fetchData() {
-        const request = await axios.get(requests.fetchNetflixOriginals)
-        setMovie(
-          request.data.results[
-            Math.floor(Math.random() * request.data.results.length - 1)
-          ]
-        )
-        return request
-      }
-      fetchData()
-    }, 1500)
+    async function fetchData() {
+      const request = await axios.get(requests.fetchNetflixOriginals)
+      setMovie(
+        request.data.results[
+          Math.floor(Math.random() * request.data.results.length - 1)
+        ]
+      )
+      return request
+    }
+    fetchData()
   }, [])
 
   function truncate(str, n) {
