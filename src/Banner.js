@@ -9,10 +9,11 @@ function Banner() {
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(requests.fetchNetflixOriginals)
-      setMovie()
-      // request.data.results[
-      //   Math.floor(Math.random() * request.data.results.length - 1)
-      // ]
+      setMovie(
+        request.data.results[
+          Math.floor(Math.random() * request.data.results.length - 1)
+        ]
+      )
       return request
     }
     fetchData()
@@ -27,8 +28,7 @@ function Banner() {
       className="banner"
       style={{
         backgroundSize: 'cover',
-        backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}"
-        )`,
+        backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}"`,
         backgroundPosition: 'center center',
       }}
     >
